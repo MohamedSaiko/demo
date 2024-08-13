@@ -4,7 +4,7 @@ import 'package:demo/repositories/any_parser.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-class NetworkManager extends AnyNetworkManager {
+class NetworkManager implements AnyNetworkManager {
   final AnyParser _parser;
   NetworkManager({required AnyParser parser}) : _parser = parser;
 
