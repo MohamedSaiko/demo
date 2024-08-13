@@ -1,5 +1,7 @@
-import 'package:demo/models/album.dart';
-
 abstract class AnyNetworkManager {
-  Future<List<Album>> fetchAlbums(String url);
+  Future<T> fetchAlbums<T>(
+      {required String url,
+      required Future<T> Function(String response) parseResponse}) async {
+    throw UnimplementedError();
+  }
 }
