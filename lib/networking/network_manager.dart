@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:demo/repositories/any_network_manager.dart';
 import 'package:http/http.dart' as http;
 
-class NetworkManager implements AnyNetworkManager {
+final class NetworkManager implements AnyNetworkManager {
   @override
   Future<T> fetchAlbums<T>(
       {required String url,
