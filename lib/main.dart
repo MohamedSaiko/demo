@@ -21,25 +21,22 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
-  
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final viewModel = ViewModel(
-    networkManager: NetworkManager(
-      parser: Parser(),
-      ),
-    );
+  final viewModel =
+      ViewModel(networkManager: NetworkManager(), parser: Parser());
 
   @override
   void initState() {
     super.initState();
-    
+
     viewModel.fetchAlbum();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
         future: viewModel.albums,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Center(
-              child: Text('An error has occurred!'),
+            return Center(
+              child: Text(snapshot.error.toString()),
             );
           } else if (snapshot.hasData) {
             return AlbumsList(albums: snapshot.data!);
@@ -84,4 +81,3 @@ class AlbumsList extends StatelessWidget {
     );
   }
 }
-
