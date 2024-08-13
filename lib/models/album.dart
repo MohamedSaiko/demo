@@ -1,4 +1,4 @@
-class Album {
+final class Album {
   final int userId;
   final int id;
   final String title;
