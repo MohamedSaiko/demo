@@ -11,6 +11,7 @@ class NetworkManager implements AnyNetworkManager {
     try {
       final uri = Uri.parse(url);
       final response = await http.get(uri);
+      
       switch (response.statusCode) {
         case 200:
           return parseResponse(response.body);
