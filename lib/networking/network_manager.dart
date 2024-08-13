@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 final class NetworkManager implements AnyNetworkManager {
   @override
-  Future<T> fetchAlbums<T>(
+  Future<T> fetch<T>(
       {required String url,
       required Future<T> Function(String response) parseResponse}) async {
     try {

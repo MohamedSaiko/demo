@@ -14,7 +14,7 @@ final class ViewModel {
         _parser = parser;
 
   void fetchAlbum() async {
-    albums = _networkManager.fetchAlbums(
+    albums = _networkManager.fetch(
         url: 'https://jsonplaceholder.typicode.com/albums',
         parseResponse: (response) => compute(_parser.parseAlbums, response));
   }
