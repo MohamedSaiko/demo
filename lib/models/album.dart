@@ -1,5 +1,5 @@
 class Album {
-    final int userId;
+  final int userId;
   final int id;
   final String title;
 
@@ -21,7 +21,7 @@ class Album {
           id: id,
           title: title,
         ),
-      _ => throw const FormatException('Failed to load album.'),
+      _ => throw const FormatException('Failed to load album.')
     };
   }
 }
