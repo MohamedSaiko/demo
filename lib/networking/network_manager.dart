@@ -25,6 +25,8 @@ class NetworkManager implements AnyNetworkManager {
       throw http.ClientException(error.message);
     } on FormatException catch (error) {
       throw FormatException(error.message);
+    } on Exception catch (error) {
+      throw Exception(error);
     }
   }
 }
